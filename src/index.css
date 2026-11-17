@@ -1,0 +1,173 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Plus Jakarta Sans', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --color-brand-50: #E6F3F7;
+  --color-brand-100: #CCE7F0;
+  --color-brand-500: #0A86B3;
+  --color-brand-600: #006C93;
+  --color-brand-700: #005877;
+  --color-ink: #0B1B2B;
+  --shadow-card: 0 1px 2px rgba(16, 24, 40, 0.04), 0 1px 3px rgba(16, 24, 40, 0.03);
+  --shadow-card-hover: 0 12px 28px -12px rgba(15, 40, 70, 0.18);
+}
+
+html,
+body {
+  background: #F5F7FA;
+  color: #0B1B2B;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Slim, subtle scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #CBD5E1 transparent;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 999px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+  background-clip: content-box;
+}
+
+::selection {
+  background: #006C93;
+  color: #fff;
+}
+
+/* Consistent page headings inside the dashboard shell */
+.app-main h1.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #0B1B2B;
+}
+
+/* Entrance animation for routed pages */
+@keyframes page-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.page-enter {
+  animation: page-in 0.28s ease-out both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-enter {
+    animation: none;
+  }
+}
+
+/* Ant Design refinements */
+.ant-modal .ant-modal-content {
+  box-shadow: 0 24px 60px -20px rgba(15, 40, 70, 0.35);
+}
+
+.ant-pagination .ant-pagination-item-active a {
+  color: #fff !important;
+}
+
+.ant-input-search .ant-input-search-button {
+  box-shadow: none;
+}
+
+/* Legal Content Typography (Jodit Editor HTML Rendering) */
+.legal-content h1 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.legal-content h2 {
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: #006C93;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.legal-content h3 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin-top: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.legal-content p {
+  color: #475569;
+  line-height: 1.75;
+  margin-bottom: 1rem;
+}
+
+.legal-content ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+  color: #475569;
+}
+
+.legal-content ol {
+  list-style-type: decimal;
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+  color: #475569;
+}
+
+.legal-content li {
+  margin-bottom: 0.4rem;
+  line-height: 1.6;
+}
+
+.legal-content a {
+  color: #006C93;
+  text-decoration: underline;
+}
+
+.legal-content strong {
+  color: #0f172a;
+  font-weight: 600;
+}
+
+.legal-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.legal-content th,
+.legal-content td {
+  border: 1px solid #e2e8f0;
+  padding: 0.75rem;
+  text-align: left;
+}
